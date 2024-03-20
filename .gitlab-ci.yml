@@ -11,4 +11,4 @@ deploy:
   script:
     - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $REMOTE_PATH && pwd"
     - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $REMOTE_PATH && git pull origin main"
-    - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $DOCKER_PATH && sudo docker compose up"
+    - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $DOCKER_PATH && pwd"
