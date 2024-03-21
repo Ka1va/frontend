@@ -14,7 +14,7 @@ deploy:
     - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $DOCKER_PATH && docker compose up -d client"
   rules:
   - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-  - if: $CI_PIPELINE_SOURCE == "pull"
+  - if: $CI_PIPELINE_SOURCE == "push"
       
   
       
