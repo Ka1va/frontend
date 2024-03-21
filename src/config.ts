@@ -10,17 +10,17 @@ const envType: EnvTypes =
   EnvTypes.development;
 
 const config = {
-  apiBaseUrl: 'http://54.193.247.113',
+  apiBaseUrl: 'http://http://54.193.222.125',
 };
 
 // eslint-disable-next-line default-case
 switch (envType) {
   case EnvTypes.production:
-    config.apiBaseUrl = 'http://54.193.247.113';
+    config.apiBaseUrl = 'http://http://54.193.222.125/';
     break;
 
   case EnvTypes.stage:
-    config.apiBaseUrl = 'http://54.193.247.113';
+    config.apiBaseUrl = 'http://http://54.193.222.125/';
     break;
 }
 
