@@ -9,7 +9,7 @@ deploy:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
   script:
-    - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $REMOTE_PATH && pwd"
+    - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $REMOTE_PATH && pwd && whoami"
     - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $REMOTE_PATH && git pull origin dev"
     - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $DOCKER_PATH && docker compose up -d --build client"
   rules:
