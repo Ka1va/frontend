@@ -10,7 +10,6 @@ deploy:
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - scp -r 
     - mkdir gitdir
     - cd gitdir
     - git clone git@gitlab.com:JhRembo/frontend.git
