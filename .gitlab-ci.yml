@@ -4,15 +4,19 @@ deploy:
       - frontendruner
   before_script:
     - apk add openssh-client
+    - apk add git
+    - apk add npm
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-  script:
-    - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $REMOTE_PATH && pwd && whoami"
-    - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $REMOTE_PATH && git pull origin dev"
-    - ssh -o StrictHostKeyChecking=no $SSH_HOST "cd $DOCKER_PATH && docker compose up -d --build client"
-    - ssh -o StrictHostKeyChecking=no $SSH_HOST "echo "Запустился пайплайн фронт" | ssmtp -C/etc/ssmtp/ssmtp.conf god.winer@yandex.ru"
+    - scp -r 
+    - mkdir gitdir
+    - cd gitdir
+    - git clone git@gitlab.com:JhRembo/frontend.git
+    - git checkout dev
+    - git pull
+
   rules:
   - if: $CI_PIPELINE_SOURCE == "merge_request_event"
   - if: $CI_PIPELINE_SOURCE == "push"

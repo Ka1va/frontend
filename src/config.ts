@@ -10,17 +10,17 @@ const envType: EnvTypes =
   EnvTypes.development;
 
 const config = {
-  apiBaseUrl: 'http://intern.fusion-team/api',
+  apiBaseUrl: 'http://intern.fusion-team.com/api',
 };
 
 // eslint-disable-next-line default-case
 switch (envType) {
   case EnvTypes.production:
-    config.apiBaseUrl = 'http://intern.fusion-team/api';
+    config.apiBaseUrl = 'http://intern.fusion-team.com/api';
     break;
 
   case EnvTypes.stage:
-    config.apiBaseUrl = 'http://intern.fusion-team/api';
+    config.apiBaseUrl = 'http://intern.fusion-team.com/api';
     break;
 }
 
