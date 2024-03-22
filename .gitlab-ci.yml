@@ -12,6 +12,7 @@ deploy:
     - chmod 700 ~/.ssh
     - mkdir gitdir
     - cd gitdir
+    - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
     - git clone git@gitlab.com:JhRembo/frontend.git
     - git checkout dev
     - git pull
