@@ -20,7 +20,7 @@ deploy:
     - cat ~/.ssh/id_rsa.pub
     - git config --global user.email "karnoushenko24@gmail.com"
     - git config --global user.name "Ivan"
-    - git clone git@gitlab.com:JhRembo/frontend.git 
+    - git clone git@gitlab.com:JhRembo/frontend.git /builds/JhRembo/frontend/gitdir
     - git checkout dev
     - git pull
   script:
