@@ -12,13 +12,15 @@ deploy:
     - chmod 700 ~/.ssh
     - mkdir gitdir
     - cd gitdir
+    - chmod 777 gitdir
+    - pwd
     - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
     - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
     - cat ~/.ssh/id_rsa.pub
     - git config --global user.email "karnoushenko24@gmail.com"
     - git config --global user.name "Ivan"
-    - git clone git@gitlab.com:JhRembo/frontend.git
+    - git clone git@gitlab.com:JhRembo/frontend.git 
     - git checkout dev
     - git pull
   script:
