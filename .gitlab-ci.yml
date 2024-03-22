@@ -13,7 +13,7 @@ deploy:
     - mkdir gitdir
     - cd gitdir
     - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
-    - cat ~/.ssh/id_rsa.pub
+    - pwd
     - git config --global user.email "karnoushenko24@gmail.com"
     - git config --global user.name "Ivan"
     - git clone git@gitlab.com:JhRembo/frontend.git
