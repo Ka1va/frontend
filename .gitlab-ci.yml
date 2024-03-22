@@ -12,7 +12,9 @@ deploy:
     - chmod 700 ~/.ssh
     - mkdir gitdir
     - cd gitdir
-    - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
+    - git config --global user.email "karnoushenko24@gmail.com"
+    - git config --global user.name "Gitlab Runner"
     - git clone git@gitlab.com:JhRembo/frontend.git
     - git checkout dev
     - git pull
