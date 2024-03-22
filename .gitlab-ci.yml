@@ -11,8 +11,8 @@ deploy:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - mkdir gitdir
-    - cd gitdir
     - chmod 777 gitdir
+    - cd gitdir
     - pwd
     - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
     - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/known_hosts
