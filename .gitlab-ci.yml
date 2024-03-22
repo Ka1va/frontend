@@ -10,9 +10,7 @@ deploy:
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - mkdir gitdir
-    - chmod 777 gitdir
-    - cd gitdir
+    - ls -la
     - pwd
     - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
     - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/known_hosts
@@ -20,7 +18,6 @@ deploy:
     - cat ~/.ssh/id_rsa.pub
     - git config --global user.email "karnoushenko24@gmail.com"
     - git config --global user.name "Ivan"
-    - git clone git@gitlab.com:JhRembo/frontend.git /builds/JhRembo/frontend/gitdir
     - git checkout dev
     - git pull
   script:
