@@ -12,6 +12,8 @@ deploy:
   script:
     - ssh -o StrictHostKeyChecking=no $SSH_HOST "echo "Запустился пайплайн фронт" | ssmtp -C/etc/ssmtp/ssmtp.conf god.winer@yandex.ru"
     - npm install && npm run build && scp -r /builds/JhRembo/frontend/build ubuntu@54.215.213.58:/home/ubuntu/workspace/frontend/
+    - exit_code=$?
+    - if [ $exit_code -ne 0 ]; - ssh -o StrictHostKeyChecking=no $SSH_HOST "echo "Ошибка при работе пайплайна" | ssmtp -C/etc/ssmtp/ssmtp.conf god.winer@yandex.ru"; fi;
   rules:
   - if: $CI_PIPELINE_SOURCE == "merge_request_event"
   - if: $CI_PIPELINE_SOURCE == "push" 
