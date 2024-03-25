@@ -5,6 +5,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: apt-get update
-      - run: apt-get install openssh-client
+      - run: sudo apt-get update
+      - run: sudo apt-get install openssh-client
       - run: pwd
