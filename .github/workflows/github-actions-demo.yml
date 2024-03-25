@@ -7,4 +7,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git branch
-    
+    - run: |
+           mkdir -p /home/runner/.ssh
+           chmod 700 /home/runner/.ssh
+           eval $(ssh-agent -s)
+           echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
