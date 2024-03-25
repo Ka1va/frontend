@@ -5,10 +5,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get update
-      - run: sudo apt-get install openssh-client
-      - run:  eval $(ssh-agent -s)
-      - run: echo "$SSH_PRIVATE_KEY"
-      - run: echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
-      - run: mkdir -p ~/.ssh
-      - run: chmod 700 ~/.ssh
+    - name: setup key
+      with: 
+          ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
+    - run: ssh -T ubuntu@54.215.213.58
+    - run: pwd
