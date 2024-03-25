@@ -13,3 +13,5 @@ jobs:
            eval $(ssh-agent -s)
            echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
            ssh -o StrictHostKeyChecking=no ubuntu@54.215.213.58 "pwd"
+           exitcode="$?"
+           if [ $exit_code -ne 0 ]; then echo "dsasd"
