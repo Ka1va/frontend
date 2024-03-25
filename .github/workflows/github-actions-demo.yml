@@ -7,4 +7,7 @@ jobs:
     steps:
       - run: sudo apt-get update
       - run: sudo apt-get install openssh-client
-      - run: ls -la
+      - run:  eval $(ssh-agent -s)
+      - run: echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+      - run: mkdir -p ~/.ssh
+      - run: chmod 700 ~/.ssh
