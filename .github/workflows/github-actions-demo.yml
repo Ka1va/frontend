@@ -11,4 +11,5 @@ jobs:
            chmod 700 /home/runner/.ssh
            eval $(ssh-agent -s)
            echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
-           ssh -o StrictHostKeyChecking=no ${{SSH_HOST}} "pwd"
+           echo "$SSH_HOST"
+           ssh -o StrictHostKeyChecking=no $SSH_HOST "pwd"
