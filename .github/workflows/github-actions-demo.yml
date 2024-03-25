@@ -8,6 +8,6 @@ jobs:
     - name: test key
     - uses: ./
       with: 
-            SSHKEY: ${{secrets.SSH_PRIVATE_KEY}}
+        SSHKEY: ${{secrets.SSH_PRIVATE_KEY}}
     - run: ssh -T ubuntu@54.215.213.58
-    - run: pwd
+    
