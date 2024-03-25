@@ -12,7 +12,7 @@ jobs:
            eval $(ssh-agent -s)
            echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
            ssh -o StrictHostKeyChecking=no ubuntu@54.215.213.58 "pwd"
+           12321312
            exitcode="$?"
            echo "$exitcode"
-           12321312
            if  [ $exitcode != 0 ]; then echo "dsasd";fi;
