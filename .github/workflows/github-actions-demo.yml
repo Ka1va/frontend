@@ -14,4 +14,5 @@ jobs:
            echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
            ssh -o StrictHostKeyChecking=no ubuntu@54.215.213.58 "pwd"
            exitcode="$?"
-           if [ $exit_code ! 0 ]; then echo "dsasd";fi;
+           echo "$exitcode"
+           if [ $exitcode ! 0 ]; then echo "dsasd";fi;
