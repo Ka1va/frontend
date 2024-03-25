@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: setup key
       with: 
-          ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
+           SSHKEY: ${{secrets.SSH_PRIVATE_KEY}}
     - run: ssh -T ubuntu@54.215.213.58
     - run: pwd
