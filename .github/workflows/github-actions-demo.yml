@@ -15,4 +15,4 @@ jobs:
            ssh -o StrictHostKeyChecking=no ubuntu@54.215.213.58 "pwd"
            exitcode="$?"
            echo "$exitcode"
-           if [ $exitcode ! 0 ]; then echo "dsasd";fi;
+           if  ${{exitcode != 0}}; then echo "dsasd";fi;
