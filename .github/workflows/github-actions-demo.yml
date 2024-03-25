@@ -5,7 +5,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: test key
     - uses: ./
       with: 
         SSHKEY: ${{secrets.SSH_PRIVATE_KEY}}
