@@ -3,7 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
   deploy:
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     steps:
-      - run: apk add openssh-client
-      - run : pwd
+      - run: apt-get update
+      - run: apt-get install openssh-client
+      - run: pwd
