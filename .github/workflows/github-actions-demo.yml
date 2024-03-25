@@ -5,7 +5,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: setup key
+    - name: test key
+    - uses: ./
       with: 
            SSHKEY: ${{secrets.SSH_PRIVATE_KEY}}
     - run: ssh -T ubuntu@54.215.213.58
