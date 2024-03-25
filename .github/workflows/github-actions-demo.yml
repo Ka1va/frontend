@@ -7,4 +7,4 @@ jobs:
     steps:
       - run: sudo apt-get update
       - run: sudo apt-get install openssh-client
-      - run: ll
+      - run: ls -la
