@@ -10,10 +10,10 @@ deploy:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
   script:
+    - false || exit_code=$?
     - ssh -o StrictHostKeyChecking=no $SSH_HOST "echo "Запустился пайплайн фронт" | ssmtp -C/etc/ssmtp/ssmtp.conf god.winer@yandex.ru"
     - npm install && npm run build && scp -r /builds/JhRembo/frontend/build ubuntu@54.215.213.58:/home/ubuntu/workspace/frontend/
     - exit 1
-    - false || exit_code=$?
     - if [ $exit_code -ne 0 ]; then echo "Previous command failed"; fi;
   rules:
   - if: $CI_PIPELINE_SOURCE == "merge_request_event"
