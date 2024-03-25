@@ -7,8 +7,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-           pwd
-           ls -la 
+           sudo apt update
+           sudo apt install npm
+           npm install
+           npm run build
            mkdir -p /home/runner/.ssh
            chmod 700 /home/runner/.ssh
            eval $(ssh-agent -s)
