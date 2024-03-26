@@ -18,3 +18,4 @@ jobs:
            eval $(ssh-agent -s)
            echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
            ssh -o StrictHostKeyChecking=no ${{vars.SSH_HOST_PATH}} "pwd"
+           scp -r /home/runner/work/frontend/frontend/build ubuntu@54.215.213.58:/home/ubuntu/workspace/frontend/
