@@ -16,4 +16,4 @@ jobs:
            eval $(ssh-agent -s)
            echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
            echo "${{vars.SSH_HOST_PATH}}"
-           ssh -o StrictHostKeyChecking=no ${{vars.SSH_HOST_PATH}} "pwd"
+           ssh -o StrictHostKeyChecking=no ${{vars.SSH_HOST_PATH}} "pwd && ll"
