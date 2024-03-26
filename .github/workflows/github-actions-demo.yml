@@ -7,6 +7,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
+           pwd
+           ls -la
            sudo apt update
            sudo apt install npm
            npm install
@@ -15,5 +17,4 @@ jobs:
            chmod 700 /home/runner/.ssh
            eval $(ssh-agent -s)
            echo "${{secrets.SSH_PRIVATE_KEY}}" | tr -d '\r' | ssh-add -
-           echo "${{vars.SSH_HOST_PATH}}"
            ssh -o StrictHostKeyChecking=no ${{vars.SSH_HOST_PATH}} "pwd"
