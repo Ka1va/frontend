@@ -13,6 +13,5 @@ RUN ls -al \
     && ls -al
 COPY nginx.conf /etc/nginx/conf.d
 COPY --from=builder /frontend/build .
-
 EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
