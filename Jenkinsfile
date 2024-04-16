@@ -10,9 +10,7 @@ pipeline {
       }
       steps {
         pwd
-        eval $(ssh-agent -s)
-        echo "$SSH_KEY" | tr -d '\r' | ssh-add -
-        ssh -o StrictHostKeyChecking=no ubuntu@ 54.193.204.29 "pwd"
+
         }
       }
    }
