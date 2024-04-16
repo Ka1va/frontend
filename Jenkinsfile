@@ -9,9 +9,9 @@ pipeline {
         SSH_KEY = credentials('aws_key_ed')
       }
       steps {
-        sh 'eval $(ssh-agent -s)'
-        sh 'echo "$SSH_KEY" | tr -d '\r' | ssh-add -'
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@ 54.193.204.29 "pwd"'
+        eval $(ssh-agent -s)
+        echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+        ssh -o StrictHostKeyChecking=no ubuntu@ 54.193.204.29 "pwd"
         }
       }
    }
