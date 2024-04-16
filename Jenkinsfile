@@ -9,7 +9,7 @@ pipeline {
         SSH_KEY = credentials('aws_key_ed')
       }
       steps {
-        pwd
+        sh 'pwd'
 
         }
       }
